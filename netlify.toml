@@ -1,0 +1,13 @@
+[[[plugins]]]
+  package = "@netlify/plugin-nextjs"
+
+[build]
+  publish = "build"
+  command = "next build && next export"
+
+[[redirects]]
+  from = "/*"
+  to = "/:splat.html"
+  status = 200
+  force = true
+  conditions = { isNotHTML: true }
